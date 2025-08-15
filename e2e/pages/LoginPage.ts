@@ -6,7 +6,10 @@ export class LoginPage {
 
   async goto() {
     await this.page.goto('/');
-    await this.page.click(selectors.home.acceptCookiesButton);
+    if (await this.page.isVisible(selectors.home.acceptCookiesButton)) {
+      await this.page.click(selectors.home.acceptCookiesButton);
+    }
+
     await this.page.click(selectors.home.loginButton);
     await this.page.click(selectors.home.hudlLoginItem);
   }

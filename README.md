@@ -8,6 +8,25 @@ This project contains UI E2E tests for the login flow of the Hudl application.
 
 ## How to run locally
 
+This repository contains automated tests for the login functionality on Hudl Login Page.
+
+The automation suite covers both positive, negative and edge case test scenarios, with specific assertions implemented within the suite to validate the behavior of the login functionality.
+
+The testcase document can be found in the `resource` folder in the root directory.
+
+Follow these steps to execute the automation tests on your local machine:
+
+### Step 1: Clone the repository
+Clone the repository to your local machine by running the following command in your terminal:
+
+```bash
+git clone https://github.com/Temmietayo/hudl.git
+```
+
+### Step 2: Intialize the project
+Run the set of commands below to intialize this project
+
+
 1.  **Install dependencies:**
     ```bash
     npm install
@@ -38,7 +57,7 @@ The tests are automatically run on every push and pull request to the `main` bra
 
 ## Selector Policy
 
-- We use `data-test-id` attributes for deterministic selectors.
+- I used `data-test-id` attributes for deterministic selectors.
 - Selectors are stored in `e2e/utils/selectors.ts`.
 - Some CSS selectors due to `data-test-id` attribute missing for some elements.
 
@@ -47,9 +66,3 @@ The tests are automatically run on every push and pull request to the `main` bra
 - `@smoke`: Critical path tests.
 - `@regression`: Regression tests.
 - `@a11y`: Accessibility tests.
-
-## Flake Policy
-
-- Retries are enabled on CI only (2 retries).
-- Local retries are disabled.
-- No `waitForTimeout` is used. Synchronization is achieved via user-visible conditions and assertions.

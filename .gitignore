@@ -1,0 +1,6 @@
+.env
+test-results/
+node_modules/
+reports/
+.cache
+.env.local

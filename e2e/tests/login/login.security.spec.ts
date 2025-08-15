@@ -24,14 +24,16 @@ test.describe('Login Security', () => {
         await expect(page.locator(selectors.login.rateLimitError)).toBeVisible();
     });
 
-    test('Negative: locked account shows appropriate message @regression', async ({ page }) => {
-        const loginPage = new LoginPage(page);
-        await loginPage.goto();
+    // we need a way to have a fixed locked account for testing
+    // test('Negative: locked account shows appropriate message @regression', async ({ page }) => {
+    //     const loginPage = new LoginPage(page);
+    //     await loginPage.goto();
 
-        const email = lockedCredentials.email;
-        const password = lockedCredentials.password;
+    //     const email = lockedCredentials.email;
+    //     const password = lockedCredentials.password;
 
-        await loginPage.login(email, password);
-        await expect(page.locator(selectors.login.promptAlert)).toContainText(/temporarily blocked your account/);
-    });
+    //     await loginPage.login(email, password);
+        
+    //     await expect(page.locator(selectors.login.promptAlert)).toContainText(/temporarily blocked your account/);
+    // });
 });
